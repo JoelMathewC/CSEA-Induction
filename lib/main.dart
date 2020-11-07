@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin{
           children: _tabList,
         ),
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.black,
           currentIndex: _currentIndex,
           onTap: (currentIndex){
             setState(() {

@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.black,
+    );
 
     // home: Scaffold(
     //     backgroundColor: Colors.white,

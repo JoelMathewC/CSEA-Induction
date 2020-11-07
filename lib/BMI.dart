@@ -10,12 +10,13 @@ class _BMIState extends State<BMI> {
   double BMI = 0;
   double height = 0;
   double weight = 0;
+  double temp = 0;
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
+      color: Colors.white,
        child: Center(
             child: Column(
               children: <Widget>[
@@ -33,7 +34,7 @@ class _BMIState extends State<BMI> {
                           '$BMI',
                           style: TextStyle(
                             fontSize: 80.0,
-                            color: Colors.blue,
+                            color: Colors.black,
 
                           ),
                         ),
@@ -81,14 +82,15 @@ class _BMIState extends State<BMI> {
                                           color: Colors.white, width: 2.0)),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.blue, width: 2.0))),
+                                          color: Colors.black, width: 2.0))),
                               validator: (val) =>
                               double.parse(val) > 0 ? 'Invalid Height' : null,
                               onChanged: (val) {
                                 height = double.parse(val);
                                 if(weight > 0) {
                                   setState(() {
-                                    BMI = weight/(height*height);
+                                    temp = weight/(height*height);
+                                    BMI = double.parse(temp.toStringAsFixed(1));
                                   });
                                 }
                               }),
@@ -102,14 +104,15 @@ class _BMIState extends State<BMI> {
                                           color: Colors.white, width: 2.0)),
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Color(0xff696969), width: 2.0))),
+                                          color: Colors.black, width: 2.0))),
                               validator: (val) =>
                               double.parse(val) > 0 ? 'Invalid Weight' : null,
                               onChanged: (val) {
                                 weight = double.parse(val);
                                 if(height > 0) {
                                   setState(() {
-                                    BMI = weight/(height*height);
+                                    temp = weight/(height*height);
+                                    BMI = double.parse(temp.toStringAsFixed(1));
                                   });
                                 }
                               }),
